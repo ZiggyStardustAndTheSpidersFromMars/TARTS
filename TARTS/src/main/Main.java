@@ -47,7 +47,7 @@ public class Main {
 		System.out.println("CONFIG : BOARD = " + board + " , VALIDATING = " + validating);
 		StringTemplateHandler.setup(board);
 		
-		if(args.length == 3) {
+		if(args.length == 3) { // translating
 			if(args[0].equals("-t") || args[0].equals("-translate")) {
 				Automaton automaton = Automaton.fromXML(args[1]);
 				if(validating ? Validator.validate(automaton) : true) {
@@ -63,7 +63,7 @@ public class Main {
 				System.err.println("ERROR : NO MATCH FOR " + args[0] + " OR WRONG NUMBER OF ARGUMENTS\n\tUSE '-help'");
 				System.exit(-1);
 			}
-		}else if(args.length == 4) {
+		}else if(args.length == 4) { // new UPPAAL project by in/out config
 			if(args[0].equals("-n") || args[0].equals("-new")) {
 				System.out.println("LOG : CREATING NEW UPPAAL AUTOMATON");
 				NewProjectBuilder.createNewautomaton(args[1].toUpperCase(), args[2].toUpperCase(), args[3].toUpperCase());
@@ -71,22 +71,27 @@ public class Main {
 				System.err.println("ERROR : NO MATCH FOR " + args[0] + " OR WRONG NUMBER OF ARGUMENTS\n\tUSE '-help'");
 				System.exit(-1);
 			}
-		}else if(args.length == 2) {
+		}else if(args.length == 2) { // converting
 			if(args[0].equals("-c") || args[0].equals("-convert")) {
 				System.out.println("LOG : COVERTING STARTED");
 				Converter.convert(args[1]);
+				System.out.println("MSG : ATTENTION, SOME TIME SPECIFIATIONS MAY HAVE CHANGED! \r\n\t" +
+									"PLEASE CHECK YOUR PROJECT IN UPPAAL!");
 			}else {
 				System.err.println("ERROR : NO MATCH FOR " + args[0] + " OR WRONG NUMBER OF ARGUMENTS\n\tUSE '-help'");
 				System.exit(-1);
 			}
-		}else if(args.length == 1) {
+		}else if(args.length == 1) { // help
 			if(args[0].equals("help") || args[0].equals("h") || args[0].equals("-h") || args[0].equals("-help")) {
 				System.out.println(StringTemplateHandler.getStringByTemplate("helpManual", null));
 			}else {
 				System.err.println("ERROR : NO MATCH FOR " + args[0] + "\n\tUSE '-help'");
 				System.exit(-1);
 			}
-		}else {
+		}else if (args.length == 0){
+			System.out.println("USE '-help' OR '-h' TO SEE HOW TO USE TARTS");
+			System.exit(-1);
+		}else { // ERROR CASE
 			System.err.println("ERROR : NO MATCH FOR " + args[0] + " OR WRONG NUMBER OF ARGUMENTS\n\tUSE '-help'");
 			System.exit(-1);
 		}
