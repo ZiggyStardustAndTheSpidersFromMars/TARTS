@@ -1,5 +1,7 @@
 # TARTS
 
+DOWNLOAD TARTS : https://github.com/ZiggyStardustAndTheSpidersFromMars/TARTS/releases/download/1.0/TARTS_1.0.zip
+
 TARTS is a code synthesis tool for timed automata by UPPAAL definition to generate code for embedded real-time systems like the arduino uno. 
 The tool uses timed automata from UPPAAL so one can investigate and verify an automaton in UPPAAL and furthermore translate it directly into 
 real code for an embedded real-time system. TARTS can only translate a subset with a specific scheme from UPAAL. Automata that are not part 
