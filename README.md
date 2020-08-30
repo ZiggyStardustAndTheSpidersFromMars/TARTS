@@ -19,14 +19,26 @@ config.txt :
 Usage   : java -jar TARTS.jar [-options] [args]
 
 Options :
+
     -c or -convert          covert a timed automaton to a specifie scheme
+    
     -t or -translate        translate a timed automaton into C code
+    
     -n or -new              create a new automaton
+    
     -h or -help             help manual / operating instructions
+    
 Arguments :
+
     -convert             arg1 - path to automaton .xml
+    
     -translate           arg1 - path to automaton .xml
+    
     -                    arg2 - path to project folder
+    
     -new                 arg1 - digital input pins. Seperated by ','
+    
     -                    arg2 - analogue input pins. Seperated by ','
+    
     -                    arg3 - output pins. Seperated by ','
+    
