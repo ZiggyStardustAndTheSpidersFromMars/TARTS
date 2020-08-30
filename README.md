@@ -1,14 +1,19 @@
 # TARTS
 
-Tarts is a tool which generates code for a embedded real-time system. You can use it to
-work with timed automata from UPPAAL in your projects. It is possibile to auto-generate 
-code for your system (Arduino Uno or NUCLEO) by a UPPAAL project. You can also generate a new
-UPPAAL project, by a input/output configuration, build your automaton and verify it in UPPAAL.
+TARTS is a code synthesis tool for timed automata by UPPAAL definition to generate code for embedded real-time systems like the arduino uno. 
+The tool uses timed automata from UPPAAL so one can investigate and verify an automaton in UPPAAL and furthermore translate it directly into 
+real code for an embedded real-time system. TARTS can only translate a subset with a specific scheme from UPAAL. Automata that are not part 
+of aforementioned subset can possibly be converted and furthermore translated using TARTS. One can use TARTS to start a new UPPAAL project 
+from an input/output configuration as well. In the following the utilisation of TARTS is described.
+ 
+TARTS was developed as a part of a bachelor thesis at TH Lübeck by Torben Friedrich Görner. 
+For questions and comments please regard to: torben.goerner@stud.th-luebeck.de
+
 
 HELP :
 
 You need a config.txt file to use the TARTS.jar. 
-You can generate Code for :
+You can generate Code for the following boards:
 - ArduinoUnoR3
 - NUCLEO-F030R8
 
