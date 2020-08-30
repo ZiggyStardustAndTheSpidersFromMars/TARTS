@@ -1,0 +1,2 @@
+board=ArduinoUnoR3
+validating=true
