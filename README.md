@@ -49,3 +49,24 @@ Arguments :
     
     -                    arg3 - output pins. Seperated by ','
     
+   
+TIMED AUTOMATA :
+
+Use UPPAAL to build and verify your project. UPPAAL projects have to be modeled in 
+by an specified scheme. You can start a new UPPAAL project by using TARTS -n / -new 
+function. 
+
+Scheme :
+
+- only one clock, must be reseted with every transition. 
+- all transitions must be synchronised with channel "cycle ?".
+- only one user automaton in an automata network with input automata and a cycle automaton.
+ (input and cycle automaton can be generated with -n/-new).
+- commited, urgent and sync. is not supported. (sync only with chan "cycle")  
+
+
+How to verify :
+
+An embedded real-time system in UPPAAL is an automata network with an User automaton (control),
+input automata (environment) and a cycle automaton to clock the system (heartbeat). The input automata
+will not be translated into program code. These automata are only for verification.
