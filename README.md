@@ -70,3 +70,5 @@ How to verify :
 An embedded real-time system in UPPAAL is an automata network with an User automaton (control),
 input automata (environment) and a cycle automaton to clock the system (heartbeat). The input automata
 will not be translated into program code. These automata are only for verification.
+
+Get UPPAAL : http://www.uppaal.org/
